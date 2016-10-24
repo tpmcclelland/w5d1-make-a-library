@@ -13,10 +13,12 @@
  ```javascript
  md.one('.active')
  ```
-* all(): Find all matching elements using any CSS selector
+* all(): Find all matching elements using any CSS selector. True/false flag sends an array if needed
 
  ```javascript
  md.all('tr')
+
+ md.all('li', true) // returns array
  ```
 * remove(): Remove an element
 
@@ -97,3 +99,37 @@
 ```javascript
  console.log(md.getValue('input'))
 ```
+
+* addEvent(): Function that adds an event listener and callback function to an element.
+
+```javascript
+  md.addEvent('h2', 'click', clickHandler)
+
+ function clickHandler() {
+     console.log('Check out my event!')
+ }   
+```
+
+* removeEvent(): Function that removes an event listener and callback function from an element.
+
+```javascript
+ md.removeEvent('h2', 'click', clickHandler)
+```
+
+* clone(): Function that makes an exact copy of the original element (see Object.create() documentation).
+
+```javascript
+ md.clone('h2')
+```
+
+* getStyle(): Function to get the computed style properties of an element.
+
+```javascript
+ md.getStyle('h2')
+ ```
+
+* setStyle(): Function to set the style of an element.
+
+```javascript
+ md.setStyle('h2', 'color', 'red')
+ ```

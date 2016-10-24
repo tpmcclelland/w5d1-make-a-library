@@ -36,3 +36,27 @@ md.setValue('input', 'tom')
 
 // Add a getValue() function that gets an form field's value attribute.
 console.log(md.getValue('input'))
+
+// Add an addEvent() function that adds an event listener and callback function to an element.
+md.addEvent('h2', 'click', clickHandler)
+
+function clickHandler() {
+    console.log('Check out my event!')
+}
+
+// Add a removeEvent() function that removes an event listener and callback function from an element.
+console.log(md.removeEvent('h2', 'click', clickHandler))
+
+// Add a clone() function that makes an exact copy of the original element (see Object.create() documentation).
+console.log(md.clone('h2'))
+
+// Add an true/false option to the all() function to return an Array.
+md.all('li', true).forEach(function(item) {
+    console.log(item)
+})
+
+// Add a getStyle() function to get the computed style properties of an element.
+console.log(md.getStyle('h2'))
+
+// Add a setStyle() function to set the style of an element.
+md.setStyle('h2', 'color', 'red')

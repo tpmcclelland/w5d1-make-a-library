@@ -7,40 +7,45 @@
         return document.querySelector(selector)
     }
 
-    var all = function (selector) {
-        return document.querySelectorAll(selector)
+    var all = function (selector, array = false) {
+        var results = document.querySelectorAll(selector)
+        if (array) {
+            return Array.from(results)
+        } else {
+            return results
+        }
     }
 
     var remove = function (element) {
-        one(element).remove()
+        document.querySelector(element).remove()
     }
 
     var addClass = function (element, cssClass) {
-        one(element).classList.add(cssClass)
+        document.querySelector(element).classList.add(cssClass)
     }
 
     var removeClass = function (element, cssClass) {
-        one(element).classList.remove(cssClass)
+        document.querySelector(element).classList.remove(cssClass)
     }
 
     var hasClass = function (element, cssClass) {
-        return one(element).classList.contains(cssClass)
+        return document.querySelector(element).classList.contains(cssClass)
     }
 
     var getAttr = function (element, attr) {
-        return one(element).getAttribute(attr)
+        return document.querySelector(element).getAttribute(attr)
     }
 
     var setAttr = function (element, attr, value) {
-        one(element).setAttribute(attr, value)
+        document.querySelector(element).setAttribute(attr, value)
     }
 
     var setHTML = function (element, html) {
-        one(element).innerHTML = html;
+        document.querySelector(element).innerHTML = html;
     }
 
     var getHTML = function (element) {
-        return one(element).innerHTML
+        return document.querySelector(element).innerHTML
     }
 
     var ajax = function (url, callback) {
@@ -50,19 +55,40 @@
     }
 
     var getProp = function (element, prop) {
-        return one(element)[prop]
+        return document.querySelector(element)[prop]
     }
 
     var setProp = function (element, prop, value) {
-        one(element)[prop] = value
+        document.querySelector(element)[prop] = value
     }
 
     var getValue = function (element) {
-        return one(element).value
+        return document.querySelector(element).value
     }
 
     var setValue = function (element, value) {
-        one(element).value = value
+        document.querySelector(element).value = value
+    }
+
+    var addEvent = function(element, event, callback) {
+        document.querySelector(element).addEventListener(event, callback)
+    }
+
+    var removeEvent = function(element, event, callback) {
+        document.querySelector(element).removeEventListener(event, callback)
+        return true
+    }
+
+    var clone = function (element) {
+        return document.querySelector(element).cloneNode(true)
+    }
+
+    var getStyle = function (element) {
+        return getComputedStyle(document.querySelector(element))
+    }
+
+    var setStyle = function (element, prop, value) {
+        document.querySelector(element).style[prop] = value
     }
 
     window.md = {
@@ -80,6 +106,11 @@
         getProp,
         setProp,
         getValue,
-        setValue
+        setValue,
+        addEvent,
+        removeEvent,
+        clone,
+        getStyle,
+        setStyle
     }
 }())
