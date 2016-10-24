@@ -43,6 +43,28 @@
         return one(element).innerHTML
     }
 
+    var ajax = function (url, callback) {
+        fetch(url)
+            .then(response => response.json())
+            .then(callback)
+    }
+
+    var getProp = function (element, prop) {
+        return one(element)[prop]
+    }
+
+    var setProp = function (element, prop, value) {
+        one(element)[prop] = value
+    }
+
+    var getValue = function (element) {
+        return one(element).value
+    }
+
+    var setValue = function (element, value) {
+        one(element).value = value
+    }
+
     window.md = {
         one,
         all,
@@ -53,6 +75,11 @@
         getAttr,
         setAttr,
         setHTML,
-        getHTML
+        getHTML,
+        ajax,
+        getProp,
+        setProp,
+        getValue,
+        setValue
     }
 }())

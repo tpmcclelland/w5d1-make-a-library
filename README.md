@@ -65,3 +65,35 @@
  ```javascript
  md.getHTML('h1')
  ```
+
+* ajax():  Function that fetches API data.
+
+```javascript
+ md.ajax('http://swapi.co/api/people', function(data){
+     console.log(data)
+ })
+```
+
+* getProp(): function that gets an element's object property value.
+
+```javascript
+ console.log(md.getProp('h1', 'nodeName'))
+ ```
+
+* setProp(): Function that sets an element's object property value.
+
+```javascript
+ md.setProp('h1', 'hidden', true)
+```
+
+* setValue(): Function that sets an form field's value attribute.
+
+```javascript
+ md.setValue('input', 'tom')
+```
+
+* getValue(): Function that gets an form field's value attribute.
+
+```javascript
+ console.log(md.getValue('input'))
+```

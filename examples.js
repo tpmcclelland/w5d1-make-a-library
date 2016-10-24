@@ -19,3 +19,20 @@ md.setAttr('img:first-child', 'alt', 'my first pic')
 md.setHTML('h1', 'Tom\'s Cool Header')
 // getHTML(): Get the innerHTML of an element
 console.log(md.getHTML('h1'))
+
+// Add an ajax() function that fetches API data.
+md.ajax('http://swapi.co/api/people', function(data){
+    console.log(data)
+})
+
+// Add a getProp() function that gets an element's object property value.
+console.log(md.getProp('h1', 'nodeName'))
+
+// Add a setProp() function that sets an element's object property value.
+md.setProp('h1', 'hidden', true)
+
+// Add a setValue() function that sets an form field's value attribute.
+md.setValue('input', 'tom')
+
+// Add a getValue() function that gets an form field's value attribute.
+console.log(md.getValue('input'))
