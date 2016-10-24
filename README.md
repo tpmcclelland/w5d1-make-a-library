@@ -18,3 +18,46 @@
 ```javascript
 md.all('tr')
 ```
+* remove(): Remove an element
+```javascript
+md.remove('table')
+```
+
+* addClass(): Add a CSS class to an element
+```javascript
+md.addClass('.sub-header', 'bg-success')
+```
+
+* removeClass(): Remove a CSS class from an element
+```javascript
+md.removeClass('.sub-header','bg-success')
+```
+
+* hasClass(): Return true if an element contains a CSS class in it's CSS attribute (see classList documentation)
+```javascript
+md.hasClass('h1', 'page-header')
+```
+
+* getAttr(): Get an HTML attribute from an element
+
+```javascript
+md.getAttr('img:first-child', 'width')
+```
+
+* setAttr(): Set an HTML attribute on an element
+
+```javascript
+md.setAttr('img:first-child', 'alt', 'my first pic')
+```
+
+* setHTML(): Set the innerHTML of an element
+
+```javascript
+md.setHTML('h1', 'Tom\'s Cool Header')
+```
+
+* getHTML(): Get the innerHTML of an element
+
+```javascript
+md.getHTML('h1')
+```
